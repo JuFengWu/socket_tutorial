@@ -1,5 +1,5 @@
 import socket
-
+import sys
 HOST = '127.0.0.1'
 PORT = 7000
 MAX_CONNECT_NUMBER = 5
@@ -21,7 +21,8 @@ while True:
         if len(indata) == 0: # connection closed
             conn.close()
             print('client closed connection.')
-            break
+            #break
+            sys.exit()
         print('recv: ' + indata.decode())
 
         outdata = 'echo ' + indata.decode()
